@@ -5,8 +5,7 @@ import Navbar from "../components/Navbar/Navbar";
 const Home = () => {
   return (
     <>
-    <div className="container-fluid">
-
+    <div>
       <Navbar />
       <ItemListCointainer />
     </div>

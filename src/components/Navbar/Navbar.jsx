@@ -1,9 +1,9 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import {  NavLink } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light m-2">
+    <nav className="navbar navbar-expand-lg navbar-light text-primary bg-success">
       <div className="container-fluid">
         <button
           className="navbar-toggler"
@@ -18,21 +18,27 @@ const Navbar = () => {
         </button>
         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div className="navbar-nav">
-            <NavLink className='nav-link'  to="/"> Home </NavLink>
-            <NavLink className='nav-link' to="/favoritos"> Favoritos</NavLink>
+            <NavLink className="nav-link" to="/">
+              {" "}
+              Home{" "}
+            </NavLink>
+            <NavLink className="nav-link" to="/favoritos">
+              {" "}
+              Favoritos
+            </NavLink>
             <div className="w-100">
-          <form className="d-flex justify-content-end w-100">
-            <input
-              className="form-control me-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button className="btn btn-outline-success" type="submit">
-              Search
-            </button>
-          </form>
-          </div>
+              <form className="d-flex justify-content-end">
+                <input
+                  className="form-control me-2"
+                  type="search"
+                  placeholder="Search"
+                  aria-label="Search"
+                />
+                <button className="btn btn-outline-success" type="submit">
+                  Search
+                </button>
+              </form>
+            </div>
           </div>
         </div>
       </div>

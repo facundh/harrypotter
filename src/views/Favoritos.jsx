@@ -1,9 +1,10 @@
 import React from 'react'
+import Navbar from '../components/Navbar/Navbar'
 
 const Favoritos = () => {
     return (
         <>
-            <h1>Soy favoritos</h1>
+            <Navbar />
         </>
     )
 }
