@@ -1,7 +1,11 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { GlobalConsumer } from "../../context/GlobalContext";
+import { isInFavorites } from "../../helper/helper";
 import griffindor from '../../img/griffindor.jpeg'
 
 const Item = ({ item }) => {
+  const {agregarFav,favourites, deleteFav} = GlobalConsumer();
 
 
 
@@ -17,8 +21,16 @@ const Item = ({ item }) => {
           <div className="card-body">
             <h5 className="card-title">{item.name}</h5>
             <p className="card-text">{item.house}</p>
-            <button className="btn btn-primary w-100 my-2">Ver Mas</button>
-            <button className="btn btn-danger w-100">Agregar a Favoritos</button>
+            <Link to={`/info/${item.id}`} className="btn btn-primary w-100 my-2">
+              Ver Mas
+              </Link>
+            {
+              isInFavorites(item.id,favourites) ? <button className="btn btn-warning w-100"  onClick={() => deleteFav(item.id)}>Eliminar de Favoritos</button>
+              :<button className="btn btn-danger w-100" onClick={() => agregarFav(item)}>Agregar a Favoritos</button>
+            }
+     
+            
+            
           </div>
         </div>
       </div>

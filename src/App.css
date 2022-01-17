@@ -39,4 +39,28 @@
 
 body{
   width: 100vw;
+ 
+}
+.homeContainer{
+  background-image:url('../src/img/fondo.png');
+}
+
+.favouritesContainer{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #005aa7; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #005aa7, #fffde4); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #005aa7, #fffde4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  
+}
+
+.cardCointainer{
+  background-image: url('../src/img/cardiamge.jpg');
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  
 }

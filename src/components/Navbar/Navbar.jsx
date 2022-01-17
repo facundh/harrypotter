@@ -1,9 +1,14 @@
 import React from "react";
 import {  NavLink } from "react-router-dom";
+import { GlobalConsumer } from "../../context/GlobalContext";
+import ComboBox from "../ComboBox/ComboBox";
 
-const Navbar = () => {
+const Navbar = ({noMostrar}) => {
+
+  const { setSearch } = GlobalConsumer();
+  
   return (
-    <nav className="navbar navbar-expand-lg navbar-light text-primary bg-success">
+    <nav className="navbar navbar-expand-lg navbar-light text-primary bg-success ">
       <div className="container-fluid">
         <button
           className="navbar-toggler"
@@ -16,8 +21,8 @@ const Navbar = () => {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div className="navbar-nav">
+        <div className="collapse navbar-collapse w-100 " id="navbarNavAltMarkup">
+          <div className="navbar-nav w-80">
             <NavLink className="nav-link" to="/">
               {" "}
               Home{" "}
@@ -27,16 +32,18 @@ const Navbar = () => {
               Favoritos
             </NavLink>
             <div className="w-100">
-              <form className="d-flex justify-content-end">
+              <form className="mx-5 d-flex justify-content-space-between align-items-center">
                 <input
-                  className="form-control me-2"
+                  className="form-control mx-2"
                   type="search"
                   placeholder="Search"
                   aria-label="Search"
+                  onChange={(e) => setSearch(e.target.value)}
                 />
-                <button className="btn btn-outline-success" type="submit">
-                  Search
-                </button>
+               
+                
+                {!noMostrar && <ComboBox />}
+              
               </form>
             </div>
           </div>
@@ -44,6 +51,7 @@ const Navbar = () => {
       </div>
     </nav>
   );
+  
 };
 
 export default Navbar;
