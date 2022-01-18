@@ -20,13 +20,13 @@ const Categoria = () => {
     },[categoria]);
     
     return (
-        <>
-        <Navbar />
+        <div>
+        
             {
-                filtrados.length < 1 ? <h1>Cargando...</h1> : <ItemListCointainer array={filtrados} /> 
+                filtrados.length < 1 ? <h1>Cargando...</h1> : <ItemListCointainer  bg='homeContainer' array={filtrados} /> 
             }
             
-        </>
+        </div>
     )
 }
 

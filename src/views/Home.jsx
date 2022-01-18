@@ -16,8 +16,8 @@ const Home = () => {
   return (
     <>
     <div className="homeContainer">
-      <Navbar />
-      <ItemListCointainer array={characters}/>
+      
+      <ItemListCointainer bg='homeContainer' array={characters}/>
     </div>
     </>
   );

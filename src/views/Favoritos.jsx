@@ -7,9 +7,12 @@ const Favoritos = () => {
   const { favourites } = GlobalConsumer();
   return (
     <>
-      <Navbar noMostrar />
+      
       {favourites.length < 1 ? (
-        <h1>'No Hay Favoritos'</h1>
+        <div className="favouritesContainer">
+          <h1>'No Hay Favoritos'</h1>
+        </div>
+        
       ) : (
         <div className="favouritesContainer">
           <ItemListCointainer array={favourites} />

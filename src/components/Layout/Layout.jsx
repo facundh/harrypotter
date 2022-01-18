@@ -1,19 +1,14 @@
-import React from 'react';
-import { Outlet } from 'react-router-dom';
-import { GlobalConsumer} from '../../context/GlobalContext';
-import Navbar from '../Navbar/Navbar';
-const Layout = ({rutas, children}) => {
+import React from "react";
+import { Outlet } from "react-router-dom";
 
-    const {characters} = GlobalConsumer()
-    return (
-        <div>
+import Navbar from "../Navbar/Navbar";
+const Layout = () => {
+  return (
+    <>
+      <Navbar />
+      <Outlet />
+    </>
+  );
+};
 
-            <Navbar characters={characters} />
-            {rutas && <Outlet />}
-            {!rutas && children}
-            
-        </div>
-    )
-}
-
-export default Layout
+export default Layout;

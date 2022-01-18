@@ -6,7 +6,7 @@ const ComboBox = () => {
 
   return (
     <>
-      <div className="dropdown">
+      <div className="dropdown ">
         <a
           className="btn btn-secondary dropdown-toggle"
           href="#"
