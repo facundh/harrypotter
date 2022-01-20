@@ -1,33 +1,26 @@
-import React, { useEffect } from 'react'
-import { useParams } from 'react-router-dom'
-import { useState } from 'react/cjs/react.development'
-import ItemListCointainer from '../components/ItemListContainer/ItemListCointainer'
-import Navbar from '../components/Navbar/Navbar'
-import { GlobalConsumer } from '../context/GlobalContext'
+import React from "react";
+import { useParams } from "react-router-dom";
+import ItemListCointainer from "../components/ItemListContainer/ItemListCointainer";
+import { GlobalConsumer } from "../context/GlobalContext";
 
 const Categoria = () => {
-    const [filtrados, setFiltrados] = useState([]);
-    const {categoria} = useParams();
+  const { categoria } = useParams();
 
-    const { characters } = GlobalConsumer();
+  const { characters } = GlobalConsumer();
 
-    const getCharacters = () => {
-       setFiltrados(characters.filter(character => character.house === categoria)); 
-    }
+  let filtrado = characters.filter(
+    (character) => character.house === categoria
+  );
 
-    useEffect(() => {
-        getCharacters()
-    },[categoria]);
-    
-    return (
-        <div>
-        
-            {
-                filtrados.length < 1 ? <h1>Cargando...</h1> : <ItemListCointainer  bg='homeContainer' array={filtrados} /> 
-            }
-            
-        </div>
-    )
-}
+  return (
+    <div>
+      {filtrado.length < 1 ? (
+        <h1>Cargando...</h1>
+      ) : (
+        <ItemListCointainer bg="homeContainer" array={filtrado} />
+      )}
+    </div>
+  );
+};
 
-export default Categoria
+export default Categoria;

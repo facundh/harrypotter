@@ -5,7 +5,7 @@ import axios from "axios";
 // 1 : Instancia de axios
 
 const axiosClient = axios.create({
-    baseURL:'http://hp-api.herokuapp.com/api'
+    baseURL:'https://hp-api.herokuapp.com/api'
 });
 
 
